@@ -6,9 +6,8 @@ export abstract class CustomError extends Error {
   // making this class similar to an interface
   abstract statusCode: number
 
-  constructor(message: string) {
-    super(message)
-
+  constructor() {
+    super()
     // Have to do this when extending a standard javascript class.
     Object.setPrototypeOf(this, CustomError.prototype)
   }

@@ -5,7 +5,7 @@ export class NotFoundError extends CustomError {
   message = '404: Route not found'
 
   constructor() {
-    super('Route not found')
+    super()
     Object.setPrototypeOf(this, NotFoundError.prototype)
   }
 

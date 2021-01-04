@@ -8,12 +8,13 @@ export const errorHandler = (
   res: Response,
   next: NextFunction
 ) => {
+  console.error(err.message || err)
+
   // Check if the error is one of our custom errors. If so, serialize it.
   if (err instanceof CustomError)
     return res.status(err.statusCode).send({ errors: err.serializeErrors() })
 
   // Otherwise handle generic errors
-  console.error(err)
   return res.status(500).send({
     errors: [{ message: err.message || 'something unexpected went wrong' }],
   })
