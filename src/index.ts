@@ -5,3 +5,4 @@ export * from './middlewares/handleValidationErrors'
 
 export * from './errors/BadRequestError'
 export * from './errors/NotFoundError'
+export * from './errors/AuthorizationError'
