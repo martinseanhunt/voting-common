@@ -9,7 +9,7 @@ export abstract class Listener<T extends Event> {
   // Subject set by the extending class should match the subject in the event type passed
   abstract subject: T['subject']
 
-  // TODO: Comment this
+  // Group name unique to the service, but not each instance of the service, used for durable name and queuegroup name
   abstract queueGroupName: string
 
   // Function that will be called to proceess the incoming message
