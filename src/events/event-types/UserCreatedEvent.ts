@@ -5,5 +5,6 @@ export interface UserCreatedEvent {
   data: {
     id: string
     version: number
+    points: number
   }
 }
