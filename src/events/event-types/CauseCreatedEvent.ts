@@ -6,7 +6,7 @@ export interface CauseCreatedEvent {
     id: string
     title: string
     image: string
-    decription: string
+    description: string
     url: string
     totalPointsAllocated: number
     version: number
