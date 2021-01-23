@@ -1,7 +1,7 @@
 import { Subjects } from '../types/Subjects'
 
-export interface AllocaionsUpdatedEvent {
-  subject: Subjects.AllocaionsUpdated
+export interface AllocationsUpdatedEvent {
+  subject: Subjects.AllocationsUpdated
   data: {
     causeId: string
     totalPoints: number
