@@ -83,7 +83,13 @@ export abstract class Listener<T extends Event> {
 
       // Process the message using the function defined by the sub class. send the msg as well so we can call ack when
       // processing is complete and any other properties on the message can be accessed.
-      this.onMessage(parsed, msg)
+
+      // We need to try catch this so that errors in any of our listener implementations don't crash the server
+      try {
+        this.onMessage(parsed, msg)
+      } catch (e) {
+        console.error(`Error in listener: ${e.message}`)
+      }
     })
   }
 }
