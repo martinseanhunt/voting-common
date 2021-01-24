@@ -65,7 +65,7 @@ export abstract class Listener<T extends Event> {
     )
 
     // Listen for incoming messages on the channel
-    subscription.on('message', (msg: Message) => {
+    subscription.on('message', async (msg: Message) => {
       const sequence = msg.getSequence()
 
       console.log(
@@ -86,7 +86,7 @@ export abstract class Listener<T extends Event> {
 
       // We need to try catch this so that errors in any of our listener implementations don't crash the server
       try {
-        this.onMessage(parsed, msg)
+        await this.onMessage(parsed, msg)
       } catch (e) {
         console.error(`Error in listener: ${e.message}`)
       }
